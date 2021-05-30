@@ -12,7 +12,7 @@ public class Menumetas {
         int opt = -1;
         Scanner key = new Scanner(System.in);
         do {
-            System.out.println("Menu de relações com as metas");
+            System.out.println("\nMenu de relações com as metas");
             System.out.println("0 - Para sair desse menu");
             System.out.println("1 - Para exibir todas as metas");
             System.out.println("2 - Para exibir as metas cumpridas");
@@ -25,7 +25,7 @@ public class Menumetas {
                 System.out.println("Você escolheu sair.");
                 break;
                 case 1:
-                System.out.println("Você escolheu exibir todas as metas");
+                System.out.println("Você escolheu exibir todas as metas:\n");
                 Metas.showMetas(1);
                     break;
                 case 2:
