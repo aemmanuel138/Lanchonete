@@ -7,7 +7,7 @@ public class Menumetas {
         Menumetas menuses = new Menumetas();
         menuses.menu();
     }
-    
+
     protected void menu() {
         int opt = -1;
         Scanner key = new Scanner(System.in);
@@ -22,11 +22,11 @@ public class Menumetas {
             opt = key.nextInt();
             switch (opt) {
                 case 0:
-                System.out.println("Você escolheu sair.");
-                break;
+                    System.out.println("Você escolheu sair.");
+                    break;
                 case 1:
-                System.out.println("Você escolheu exibir todas as metas:\n");
-                Metas.showMetas(1);
+                    System.out.println("Você escolheu exibir todas as metas:\n");
+                    Metas.showMetas(1);
                     break;
                 case 2:
                     System.out.println("Você escolheu exibir todas as metas cumpridas");
@@ -40,12 +40,11 @@ public class Menumetas {
                 case 5:
                     System.out.println("Você escolheu remover uma meta");
                     break;
-                case 6:
+                default:
                     System.out.println("O que você escolheu ainda não existe");
                     break;
             }
         } while (opt != 0);
         key.close();
-
     }
 }
