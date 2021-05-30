@@ -7,6 +7,8 @@ public class Menumetas {
  
     protected void menu() {
         int opt = 0;
-        System.out.println();
+        System.out.println("Menu de relações com as metas");
+        System.out.println("1 - Para exibir as metas");
+        
     }
 }
