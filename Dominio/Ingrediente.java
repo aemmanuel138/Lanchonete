@@ -2,8 +2,6 @@
   Pode utilizar esse cabeçalho pra contar uma breve estória dessa classe.
   @Aragon
 
-
-  Sugestão trocar o nome da classe pra "Ingrediente"
   @Aragon
 */
 
