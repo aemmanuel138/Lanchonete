@@ -3,8 +3,8 @@ package Dominio;
 public class Pessoa {
     private String nome;
     private int cod;
-    private String sexo;
-    private int idade;
+    private String sexo = "Não informado";
+    private int idade = 2021 - (2021 - 18);
 
     public Pessoa(String name, int cod) {
         this.nome = name;
