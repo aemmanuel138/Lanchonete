@@ -23,29 +23,30 @@ public class Menumetas {
             opt = key.nextInt();
             switch (opt) {
                 case 0:
+                    System.out.println("Você escolheu sair.");
 
                     break;
                 case 1:
-
+                    System.out.println("Você escolheu exibir todas as metas");
                     break;
                 case 2:
+                    System.out.println("Você escolheu exibir todas as metas cumpridas");
 
                     break;
                 case 3:
+                    System.out.println("Você escolheu exibir todas as metas pendentes");
 
                     break;
                 case 4:
-
+                    System.out.println("Você escolheu adicionar uma meta");
                     break;
                 case 5:
+                    System.out.println("Você escolheu remover uma meta");
 
                     break;
                 case 6:
-
+                    System.out.println("O que você escolheu ainda não existe");
                     break;
-
-                default:
-                    menu();
             }
         } while (opt != 0);
         key.close();
