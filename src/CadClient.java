@@ -9,8 +9,11 @@ import java.util.Scanner;
 
 public class CadClient {
     static Scanner key = new Scanner(System.in);
-    private static String strBD = "jdbc:mysql://localhost:3306,dj,\"\"";
-    private static String banco = "Lanchonete";
+    private static String urlBD = "jdbc:mysql://localhost:3306"; // Coloque o drive, endereço e porta do banco de dados
+    private static String urlUser = "dj"; // Insira o usuário que tem acesso ao banco de dados
+    private static String urlPassword = ""; // Insira sua senha de acesso ao banco de dados
+    private static String acessoBD = urlBD + "," + urlUser + "," + urlPassword;
+    private static String banco = "Lanchonete"; // Informe o nome da base de dados
     private static String tabela = "Cliente";
     private static String bd_tabela = banco + "." + tabela;
 
@@ -61,7 +64,7 @@ public class CadClient {
     protected static int getNumClientes() {
         int rows = 0;
         try {
-            Connection conn = DriverManager.getConnection(strBD);
+            Connection conn = DriverManager.getConnection(acessoBD);
             PreparedStatement statment = conn.prepareStatement("SELECT * FROM " + bd_tabela);
             ResultSet result = statment.executeQuery();
             rows = 0;
@@ -72,7 +75,7 @@ public class CadClient {
             return rows;
 
         } catch (SQLException e) {
-            System.out.println("Não Conectado a database");
+            // System.out.println("Não Conectado a database");
             Logger.getLogger(CadClient.class.getName()).log(Level.SEVERE, null, e);
         }
         return rows;
@@ -81,7 +84,7 @@ public class CadClient {
     public static void listaClientes() {
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306", "dj", "");
+            conn = DriverManager.getConnection(acessoBD);
             PreparedStatement statment = conn.prepareStatement("SELECT * FROM " + bd_tabela);
             ResultSet result = statment.executeQuery();
 
@@ -101,7 +104,7 @@ public class CadClient {
                 System.out.printf("Atualizado em: %s]%n", atualizadoEm);
             }
         } catch (SQLException e) {
-            System.out.println("Não Conectado a database");
+            // System.out.println("Não Conectado a database");
             Logger.getLogger(CadClient.class.getName()).log(Level.SEVERE, null, e);
         }
     }
@@ -109,7 +112,7 @@ public class CadClient {
     protected static void buscarCliente(int id) {
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306", "dj", "");
+            conn = DriverManager.getConnection(acessoBD);
             PreparedStatement statment = conn.prepareStatement("SELECT * FROM " + bd_tabela + " WHERE cliente_id = ?");
             statment.setInt(1, id);
             ResultSet result = statment.executeQuery();
@@ -153,7 +156,7 @@ public class CadClient {
         try {
             // Driver driver = new Driver();
             // DriverManager.registerDriver(driver);
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306", "dj", "");
+            conn = DriverManager.getConnection(acessoBD);
             PreparedStatement statment = conn.prepareStatement(
                     "INSERT INTO " + bd_tabela + " (cliente_nome, cliente_sobrenome, cliente_email) VALUES (?, ?, ?)");
             /*
@@ -225,9 +228,9 @@ public class CadClient {
     protected static void atualizaNomeCliente(int id, String name) {
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306", "dj", "");
-            PreparedStatement statment = conn.prepareStatement(
-                    "UPDATE " + bd_tabela + " SET cliente_atualizadoem = CURRENT_TIMESTAMP, cliente_nome = ? WHERE cliente_id = ?");
+            conn = DriverManager.getConnection(acessoBD);
+            PreparedStatement statment = conn.prepareStatement("UPDATE " + bd_tabela
+                    + " SET cliente_atualizadoem = CURRENT_TIMESTAMP, cliente_nome = ? WHERE cliente_id = ?");
             /*
              * esses pontos de interrogação é para dizer ao java que será inserido um valor
              * mas que eu ainda não sei qual será
@@ -249,9 +252,9 @@ public class CadClient {
     protected static void alteraSobreNomeCliente(int id, String sNome) {
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306", "dj", "");
-            PreparedStatement statment = conn.prepareStatement(
-                    "UPDATE "+ bd_tabela + " SET cliente_atualizadoem = CURRENT_TIMESTAMP, cliente_sobrenome = ? WHERE cliente_id = ?");
+            conn = DriverManager.getConnection(acessoBD);
+            PreparedStatement statment = conn.prepareStatement("UPDATE " + bd_tabela
+                    + " SET cliente_atualizadoem = CURRENT_TIMESTAMP, cliente_sobrenome = ? WHERE cliente_id = ?");
             /*
              * esses pontos de interrogação é para dizer ao java que será inserido um valor
              * mas que eu ainda não sei qual será
@@ -273,9 +276,9 @@ public class CadClient {
     protected static void alteraEmailCliente(int id, String mail) {
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306", "dj", "");
-            PreparedStatement statment = conn.prepareStatement(
-                    "UPDATE "+bd_tabela + " SET cliente_atualizadoem = CURRENT_TIMESTAMP, cliente_email = ? WHERE cliente_id = ?");
+            conn = DriverManager.getConnection(acessoBD);
+            PreparedStatement statment = conn.prepareStatement("UPDATE " + bd_tabela
+                    + " SET cliente_atualizadoem = CURRENT_TIMESTAMP, cliente_email = ? WHERE cliente_id = ?");
             /*
              * esses pontos de interrogação é para dizer ao java que será inserido um valor
              * mas que eu ainda não sei qual será
@@ -304,7 +307,7 @@ public class CadClient {
     protected static void deletaCliente(int id) {
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306", "dj", "");
+            conn = DriverManager.getConnection(acessoBD);
             PreparedStatement statment = conn.prepareStatement("DELETE FROM " + bd_tabela + " WHERE cliente_id = ?");
             /*
              * esses pontos de interrogação é para dizer ao java que será inserido um valor
