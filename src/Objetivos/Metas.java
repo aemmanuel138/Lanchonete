@@ -7,15 +7,15 @@ public class Metas {
     private static Map<String, Boolean> map = new HashMap<String, Boolean>();
     private static int espacamento = 0;
     private static String[][] metas = {        
-            { "Definir as classes e categorias", "f" },
+            {"Definir as classes e categorias", "f"},
             {"Cadastro de Insumos", "f"},
             {"Cadastro de Clientes", "f"},
             {"Listar ingredientes", "f"}, // ** Estarão numa estrutura de dicionário?
             {"Selecionar ingredientes e quantidades", "f"},
             {"Listar itens selecionados e valores","f"},
             {"Contabilizar o valor total da seleção", "f"},
-            {"Modelo de pagamento de Confirmação do Pedido", "f"},        //redução dos ingredientes
-            {"Tempo estimado para entrega", "f"},// Baseado na fila de espera
+            {"Modelo de pagamento de Confirmação do Pedido", "f"},  //redução dos ingredientes ver2.0
+            {"Tempo estimado para entrega", "f"},                   // Baseado na fila de espera
             {"Definir um tempo de produção x", "f"},
             {"Quantidade de pedidos", "f"},
             {"Confirmação da finalização do pedido", "f"},
