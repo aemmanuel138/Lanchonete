@@ -1,3 +1,5 @@
+package Dominio;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -9,7 +11,7 @@ public class Produto{
   public Produto() {
     this.nome = "";
     this.preco = 0.0;
-    this.ingredientes = new ArrayList<Ingrediente>();
+    this.ingredientes = new ArrayList<>();
   }
 	/**
    * @param name
@@ -27,18 +29,10 @@ public class Produto{
     return this.nome;
   }
 
-  /**
-   * @param name
-	 * Ajusta o preço do produto
-   */
   protected void setPreco(double preco) {
     this.preco = preco;
   }
 
-  /**
-   * @param name
-	 * Ajusta o preço do produto
-   */
   protected void setPreco(int preco) {
     this.preco = preco;
   }
@@ -51,10 +45,7 @@ public class Produto{
     return this.preco;
   }
 
-  /**
-   * @param name
-	 * Ajusta a lista de ingredientes do produto
-   */
+
   protected void setListaIngredientes(ArrayList<Ingrediente> list) {
     this.ingredientes = list;
   }

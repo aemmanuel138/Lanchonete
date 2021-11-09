@@ -1,4 +1,4 @@
-/*Classe de Item do Pedido
+package Dominio;/*Classe de Item do Pedido
   
   @Produto - Produto individual
   @quantidade - Quantidade individual de cada item (produto) adicionado ao Pedido

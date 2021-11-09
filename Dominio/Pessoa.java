@@ -1,3 +1,4 @@
+package Dominio;
 
 public class Pessoa {
 	private String nome;
@@ -13,16 +14,18 @@ public class Pessoa {
 	protected void setNome(String name) {
 		this.nome = name;
 	}
-	protected int getCod(){
-		return this.cod;
-	}
-
 	public String getNome() {
 		return this.nome;
 	}
-	
+
 	protected void setIdade(int age) {
 		this.idade = age;
+	}
+protected  void setCod(int codigo){
+		this.cod = codigo;
+}
+	protected int getCod(){
+		return this.cod;
 	}
 
 	public int getIdade() {

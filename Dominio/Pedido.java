@@ -1,4 +1,4 @@
-
+package Dominio;
 /* Classe do Pedido
   @numPedido - identificador externo do Pedido
   @cliente - Cliente associado ao Pedido

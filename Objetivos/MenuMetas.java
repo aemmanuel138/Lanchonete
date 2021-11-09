@@ -1,3 +1,5 @@
+package Objetivos;
+
 import java.util.*;
 
 public class MenuMetas{

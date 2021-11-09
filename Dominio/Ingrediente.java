@@ -1,4 +1,4 @@
-/*Qual o Objetivo dessa Classe?
+package Dominio;/*Qual o Objetivo dessa Classe?
   Pode utilizar esse cabeçalho pra contar uma breve estória dessa classe.
   @Aragon
 

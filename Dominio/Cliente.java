@@ -1,3 +1,5 @@
+package Dominio;
+
 import java.util.Calendar;
 
 public class Cliente extends Pessoa {
@@ -19,8 +21,8 @@ public class Cliente extends Pessoa {
 		this.telefone = telefone;
 		this.consumo += consumo;
 
-		/**
-		 * > Variável para o consumo geral do cliente (1); 
+		/*
+		 * > Variável para o consumo geral do cliente (1);
      (done!) > Data de cadastro (2); (done!)
 		 */
 	}
@@ -63,9 +65,9 @@ public class Cliente extends Pessoa {
 	public double getConsumo(){
 		return this.consumo;
 	}
-	
+
 	public void setcod(int cod) {
-		this.setcod(cod);
+		super.setCod(cod);
 	}
 
 	public int getcod() {

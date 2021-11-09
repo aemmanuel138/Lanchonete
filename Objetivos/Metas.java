@@ -1,8 +1,10 @@
+package Objetivos;
+
 import java.util.Map;
 import java.util.HashMap;
 
 public class Metas {
-    private static Map<String, Boolean> map = new HashMap<String, Boolean>();
+    private static Map<String, Boolean> map = new HashMap<>();
     private static int espacamento = 0;
     private static String[][] metas = {        
             { "Definir as classes e categorias", "f" },
